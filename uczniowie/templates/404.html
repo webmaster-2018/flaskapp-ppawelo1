@@ -1,0 +1,14 @@
+{% extends "szablon.html" %}
+{% block tytul_strony %}Nie znaleziono strony!{% endblock %}
+{% block h1 %}Nie znaleziono strony{% endblock %}
+{% block h2 %}Coś poszło nie tak…{% endblock %}
+{% block tresc%}
+
+Strona o podanym adresie nie istnieje. <br>
+
+<a href="{{ url_for('index')}}">
+  <button class="btn btn-success">Strona główna</button>
+</a>
+
+
+{% endblock %}

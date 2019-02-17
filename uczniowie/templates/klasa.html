@@ -1,0 +1,35 @@
+<!--Lista uczniów danej klasy-->
+{% extends "szablon.html" %}
+{% block tytul_strony %}Klasa {{ klasa.nazwa }} {% endblock %}
+{% block h1 %}Klasa {{ klasa.nazwa }} {% endblock %}
+{% block lead %}{% endblock %}
+{% block h2 %}Informacje o klasie {{ klasa.nazwa }} {% endblock %}
+{% block tresc%}
+
+<a href="{{url_for('klasy')}}">
+  <button class="btn btn-info">«Powrót do listy klas</button>
+</a>
+
+<a href="{{url_for('usun_klase', klasa_id=klasa.id)}}">
+  <button class="btn btn-danger">Usuń</button>
+</a>
+
+
+<div>
+  Rok naboru: {{klasa.rok_naboru}} r. <br>
+  Rok matury: {{klasa.rok_matury}} r. <br>
+  Liczba uczniów: {{liczba_uczniow}}
+</div>
+
+<br>
+
+<ol>
+  {% for uczen in uczniowie %}
+
+  <li>{{uczen.imie}} {{uczen.nazwisko}}</li>
+  {% endfor %}
+
+</ol>
+
+
+{% endblock %}

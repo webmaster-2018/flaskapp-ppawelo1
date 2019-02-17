@@ -1,0 +1,33 @@
+{% extends "szablon.html" %}
+{% block tytul_strony %}Edytuj klasę {% endblock %}
+{% block h1 %}Edytuj klasę{% endblock %}
+{% block lead %}Edytuj klasę{% endblock %}
+{% block h2 %}Klasa {{klasa.nazwa }}{% endblock %}
+{% block tresc%}
+
+<a href="{{url_for('klasy')}}">
+  <button class="btn btn-info">«Powrót do listy klas</button>
+</a>
+
+<a href="{{ url_for('usun_klase', klasa_id=klasa.id) }}">
+  <button class="btn btn-danger">Usuń</button>
+</a>
+
+<form method="POST">
+  {{ form.csrf_token }}
+
+  {{ form.nazwa.label }}<br>
+  {{ form.nazwa(class="form-control") }}<br>
+  <br>
+  {{ form.rok_naboru.label }}<br>
+  {{ form.rok_naboru(class="form-control") }}<br>
+
+  <br>
+  {{ form.rok_matury.label }}<br>
+  {{ form.rok_matury(class="form-control") }}<br>
+
+
+  <input class="btn btn-success" type="submit" value="Edytuj">
+</form>
+
+{% endblock %}

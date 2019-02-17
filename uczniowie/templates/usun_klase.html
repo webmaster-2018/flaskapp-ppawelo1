@@ -1,0 +1,28 @@
+{% extends "szablon.html" %}
+{% block tytul_strony %}Usuń klasę {{ klasa.nazwa}} {% endblock %}
+{% block h1 %}Usuń klasę{% endblock %}
+{% block lead %}Potwierdź usunięcie klasy{% endblock %}
+{% block h2 %}Czy napewno chcesz usunąć klasę {{ klasa.nazwa }} ?{% endblock %}
+{% block tresc%}
+
+
+Dane szczegółowe:
+<br>
+Nazwa klasy: {{ klasa.nazwa }}
+<br>
+Rok naboru: {{ klasa.rok_naboru }}
+<br>
+Rok matury: {{ klasa.rok_matury }}
+<br>
+
+<a href="{{url_for('klasy')}}">
+  <button class="btn btn-info">«Powrót do listy klas</button>
+</a>
+
+<form method="POST">
+  <button class="btn btn-danger">Usuń</button>
+</form>
+
+
+
+{% endblock %}

@@ -1,0 +1,27 @@
+{% extends "szablon.html" %}
+{% block tytul_strony %}Usuń ucznia {{ uczen.imie }}  {{ uczen.nazwisko }} {% endblock %}
+{% block h1 %}Usuń ucznia{% endblock %}
+{% block lead %}Potwierdź usunięcie klasy{% endblock %}
+{% block h2 %}Czy napewno chcesz usunąć ucznia {{ uczen.imie }}  {{ uczen.nazwisko }}?{% endblock %}
+{% block tresc%}
+
+Dane szczegółowe:
+<br>
+Imię: {{ uczen.imie }}
+<br>
+Nazwisko: {{ uczen.nazwisko }}
+<br>
+Klasa: {{ uczen.klasa.nazwa }}
+<br>
+
+<a href="{{url_for('uczniowie')}}">
+  <button class="btn btn-info">«Powrót do listy uczniów</button>
+</a>
+
+
+<form method="POST">
+  <button class="btn btn-danger">Usuń</button>
+</form>
+
+{% endblock %}
+

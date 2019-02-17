@@ -1,0 +1,24 @@
+{% extends "szablon.html" %}
+{% block tytul_strony %}Dodaj klasę {% endblock %}
+{% block h1 %}Dodaj klasę{% endblock %}
+{% block lead %}Tu możesz dodać klasę{% endblock %}
+{% block h2 %}Klasa {% endblock %}
+{% block tresc%}
+<form method="POST">
+  {{ form.csrf_token }}
+
+  {{ form.nazwa.label }}<br>
+  {{ form.nazwa(class="form-control") }}<br>
+  <br>
+  {{ form.rok_naboru.label }}<br>
+  {{ form.rok_naboru(class="form-control") }}<br>
+
+  <br>
+  {{ form.rok_matury.label }}<br>
+  {{ form.rok_matury(class="form-control") }}<br>
+
+
+  <input class="btn btn-success" type="submit" value="Prześlij">
+</form>
+
+{% endblock %}
